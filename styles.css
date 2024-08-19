@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.comprobante-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.empresa {
+    text-align: center;
+    flex-grow: 1;
+    padding-right: 50px;
+}
+
+.comprobante-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.comprobante-table {
+    margin-bottom: 20px;
+}
+
+.comprobante-table table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que las celdas tengan un ancho fijo */
+}
+
+.comprobante-table td {
+    padding: 5px;
+    border: 1px solid #000;
+    word-wrap: break-word; /* Asegura que el texto no se salga de las celdas */
+}
+
+.comprobante-firma {
+    margin-top: 40px;
+}
+
+.comprobante-firma p {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 8.5in; /* Ancho de una hoja carta */
+        height: 11in; /* Alto de una hoja carta */
+        overflow: hidden; /* Evitar desbordamientos */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .comprobante-header, .comprobante-info, .comprobante-table, .comprobante-firma {
+        margin: 0;
+        padding: 0;
+    }
+
+    .comprobante-table table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Asegura que las celdas tengan un ancho fijo */
+    }
+
+    .comprobante-table td {
+        padding: 5px;
+        border: 1px solid #000;
+        word-wrap: break-word; /* Asegura que el texto no se salga de las celdas */
+    }
+
+    /* Ocultar elementos innecesarios durante la impresión */
+    form, h1, #buscador, #imprimir {
+        display: none;
+    }
+}

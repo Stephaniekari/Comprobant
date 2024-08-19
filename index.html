@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante de Anticipo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generar Comprobante de Anticipo</h1>
+        <form id="comprobanteForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" required>
+
+            <label for="dpi">DPI:</label>
+            <input type="text" id="dpi" required>
+
+            <label for="producto">Producto:</label>
+            <input type="text" id="producto" required>
+
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" required>
+
+            <label for="anticipo">Anticipo:</label>
+            <div class="input-group">
+                <span class="input-group-text">Q</span>
+                <input type="number" id="anticipo" required min="0" step="0.01">
+            </div>
+
+            <label for="recibidoPor">Recibido por:</label>
+            <input type="text" id="recibidoPor" required>
+
+            <button type="submit">Guardar Comprobante</button>
+        </form>
+
+        <div id="buscador">
+            <h2>Buscar Comprobante</h2>
+            <input type="number" id="buscarNumero" placeholder="Ingresar número de comprobante">
+            <button id="buscarComprobante">Buscar</button>
+        </div>
+
+        <div id="comprobante" class="comprobante hidden">
+            <div class="comprobante-header">
+                <div class="logo">
+                    <img src="Logo.png" alt="Logo">
+                </div>
+                <div class="empresa">
+                    <h2>MUSICALES ALFA Y OMEGA</h2>
+                    <p>5a Av. 6-22, Zona 1 Retalhuleu Tel: 77715039-Whatsapp 55130847</p>
+                    <p>INSTRUMENTOS MUSICALES, EQUIPO DE AMPLIFICACIÓN, ACCESORIOS Y REPUESTOS</p>
+                </div>
+            </div>
+
+            <div class="comprobante-info">
+                <div class="anticipo">
+                    <p>Anticipo: Q<span id="anticipoComprobante"></span></p>
+                </div>
+                <div class="numero">
+                    <p>No.: <span id="numComprobante"></span></p>
+                </div>
+            </div>
+
+            <div class="comprobante-table">
+                <table>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td><span id="nombreComprobante"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Dirección:</td>
+                        <td><span id="direccionComprobante"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Teléfonos:</td>
+                        <td><span id="telefonoComprobante"></span></td>
+                    </tr>
+                    <tr>
+                        <td>DPI:</td>
+                        <td><span id="dpiComprobante"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Producto:</td>
+                        <td><span id="productoComprobante"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Marca:</td>
+                        <td><span id="marcaComprobante"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Recibido por:</td>
+                        <td><span id="recibidoPorComprobante"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="comprobante-firma">
+                <p>Firma de Recibido: _______________________________________________</p>
+            </div>
+
+            <button id="imprimir">Imprimir Comprobante</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
